@@ -60,7 +60,7 @@ module.exports = class extends Generator {
         email: this.email,
         description: this.description
       }, {
-
+        delimiter: '?'
       }, {
         globOptions: {
           dot: true

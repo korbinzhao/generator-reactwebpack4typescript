@@ -1,7 +1,7 @@
 {
-  "name": "webpack-4-quickstart",
+  "name": "<?=project?>",
   "version": "1.0.0",
-  "description": "> Webpack 4 tutorial: All You Need to Know, from 0 Conf to Production Mode",
+  "description": "<?=description?>",
   "main": "build/index.js",
   "scripts": {
     "start": "webpack-dev-server --mode development --hot --progress --colors --open",
@@ -12,7 +12,8 @@
     "url": ""
   },
   "keywords": [],
-  "author": "",
+  "author": "<?=user?>",
+  "email": "<?=email?>",
   "license": "MIT",
   "bugs": {
     "url": ""
