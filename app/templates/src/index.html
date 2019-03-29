@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>页面名称</title>
+  <style>
+    .c-loading {
+      padding: 100px;
+      text-align: center;
+      font-size: 16px;
+      color: #666;
+    }
+
+    .icon-svg {
+      width: 1em;
+      height: 1em;
+      vertical-align: -0.15em;
+      fill: currentColor;
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+  <div id="root"><div class="c-loading">页面加载中...</div></div>
+
+  <script src="https://g.alicdn.com/dt/tracker/3.3.0/tracker.Tracker.js" crossorigin></script>
+  <script src="https://g.alicdn.com/dt/tracker/3.3.0/tracker.performanceTrackerPlugin.js" crossorigin></script>
+
+  <script>
+    if (window.location.host.indexOf('aliyun.com') !== -1 && window.location.host !==
+      'industrialbrain-platform-pre.aliyun.com') {
+      var tracker = new Tracker({
+        pid: 'industrybrain',
+        resourceError: true, // 资源错误监控
+        resourceErrorSampleRate: 1,
+        plugins: [
+          [performanceTrackerPlugin, {
+            sampleRate: 1
+          }], // 性能监控
+        ]
+      });
+      window.tracker = tracker;
+      tracker.install();
+
+      window.onload = function () {
+        setTimeout(() => {
+          try {
+            let timing = window.performance && window.performance.timing;
+            timing = JSON.stringify(timing);
+            window.tracker && window.tracker.log({
+              pid: 'industrybrain',
+              msg: '自定义性能监控', // 异常信息，推荐传入
+              sampleRate: 1.00, // 目前采样率为 100.00%
+              code: 11, // 自定义性能监控
+              c1: timing
+            });
+          } catch (e) {
+            console.warn('tracker.log error', e);
+          }
+        }, 3000);
+      };
+    }
+  </script>
+</body>
+</html>
