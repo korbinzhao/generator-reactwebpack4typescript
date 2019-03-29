@@ -4,8 +4,7 @@
   "description": "a scaffold generator for react & typescript & webpack4 project",
   "scripts": {
     "test": "jest",
-    "pretest": "eslint . --fix",
-    "prepublish": "nsp check"
+    "pretest": "eslint . --fix"
   },
   "repository": {
     "type": "git",
