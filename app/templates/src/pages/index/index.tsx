@@ -4,7 +4,7 @@ import { Suspense, lazy } from 'react';
 import * as ReactDOM from 'react-dom';
 import { Route, HashRouter, Switch } from 'react-router-dom';
 import { Provider } from 'mobx-react';
-import Loading from '../../components/loading';
+import Loading from 'components/loading';
 import { stores } from '../../stores';
 import '@babel/polyfill';
 
@@ -19,7 +19,6 @@ declare global {
 }
 
 const Welcome = lazy(() => import('./mod/welcome'));
-const About = lazy(() => import('./mod/about'));
 
 ReactDOM.render(
     <Provider {...stores}>
@@ -27,7 +26,6 @@ ReactDOM.render(
             <Suspense fallback={<Loading />}>
                 <Switch>
                     <Route path="/" component={Welcome} exact />
-                    <Route path="/about" component={About} exact />
                 </Switch>
             </Suspense>
         </HashRouter>

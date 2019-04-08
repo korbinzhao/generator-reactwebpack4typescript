@@ -65,8 +65,7 @@
     "webpack-dev-server": "3.2.1"
   },
   "dependencies": {
-    "@ali/com-axios": "^0.0.5",
-    "@ali/hc-aliyun-auth": "2.0.0-beta.3",
+    "com-axios": "0.0.1",
     "@babel/helper-module-imports": "7.0.0",
     "@babel/polyfill": "7.2.3",
     "@types/react": "16.8.7",

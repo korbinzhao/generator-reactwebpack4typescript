@@ -32,6 +32,7 @@ module.exports = {
       components: path.join (__dirname, 'src/components'),
       pages: path.join (__dirname, 'src/pages'),
       common: path.join (__dirname, 'src/common'),
+      stores: path.join(__dirname, 'src/stores')
     },
   },
   externals: {

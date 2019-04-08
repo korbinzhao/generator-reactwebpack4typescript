@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { observer, inject } from 'mobx-react';
 import { Link } from 'react-router-dom';
-import { CustomMobxStore } from '../../../../stores/mobx-store';
+import { CustomMobxStore } from 'stores/mobx-store';
 
 interface Props {
     mobxStore?: CustomMobxStore;
@@ -30,11 +30,8 @@ export default class Welcome extends React.Component<Props>{
         return <div>
             <div>
                 <Link to="/">home </Link>
-                <Link to="/about">about </Link>
-                <Link to="/about?id=1">about id=1</Link>
-                <Link to="/about?id=2">about id=2</Link>
             </div>
-            <div>Welcome222 {greeting}</div>
+            <div>Welcome {greeting}</div>
             <button onClick={this.clickHandler}>Change Greeting</button>
         </div>
     }
