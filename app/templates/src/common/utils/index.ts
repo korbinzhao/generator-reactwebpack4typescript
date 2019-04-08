@@ -1,5 +1,5 @@
 import { message } from 'antd';
-import comAxios from '@ali/com-axios';
+import comAxios from 'com-axios';
 import apiMap from './api';
 
 export default {
